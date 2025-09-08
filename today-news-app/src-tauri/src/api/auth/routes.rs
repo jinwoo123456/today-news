@@ -7,9 +7,8 @@ use super::handlers;
 
 
 
-pub fn routes() -> Router<()> {
-    Router::<()>::new()
-        .without_v07_checks()
+pub fn router() -> Router {
+    Router::new()
         .route("/signup", post(handlers::signup))
-        //.route("/login", post(handlers::login))
+        // .route("/login", post(handlers::login))
 }

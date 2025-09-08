@@ -4986,6 +4986,8 @@ dependencies = [
  "tauri",
  "tauri-build",
  "tauri-plugin-opener",
+ "tokio",
+ "tower-http",
 ]
 
 [[package]]
