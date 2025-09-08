@@ -1,13 +1,13 @@
 use dotenvy::dotenv;
-use axum::{router::get, Router};
+use axum::{routing::get, Router};
 use sea_orm::{Database, DatabaseConnection,ConnectOptions};
 use std::env;
+use std::time::Duration;
 
 async fn db_connect() -> DatabaseConnection {
     dotenv().ok(); // env 로드
 
-    let url = env.var("DATABASE_URL").expect("DATABASE_URL 없음");
-
+    let url = dotenvy::var("DATABASE_URL").expect("DATABASE_URL 없음");
     // db 연결 옵션
     let mut options = ConnectOptions::new(url);
 

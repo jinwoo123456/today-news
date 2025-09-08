@@ -1,5 +1,8 @@
-// Tauri에서 자바스크립트(frontend) → Rust(backend)로 호출할 수 있는 명령(커맨드)을 정의
-// #[tauri::command]는 매크로로, 이 함수를 JS에서 invoke("greet", { name: "값" }) 형태로 호출할 수 있게 해줌
+mod api;
+mod db;
+
+// Tauri에서 자바스크립트(frontend) → Rust(backend)로 호출할 수 있는 명령(커맨드)을 정의 
+//#[tauri::command]는 매크로로, 이 함수를 JS에서 invoke("greet", { name: "값" }) 형태로 호출할 수 있게 해줌
 #[tauri::command]
 fn greet(name: &str) -> String {
     // format! 매크로로 문자열 생성 (name을 받아 "Hello, {name}!" 메시지 반환)
